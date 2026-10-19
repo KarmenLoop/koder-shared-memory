@@ -1,8 +1,6 @@
 # KODER Shared Memory
 
-**Keep the context. Pick up anywhere.**
-
-A portable skill for carrying work across Feishu, WeCom, WeChat, and your desktop.
+KODER Shared Memory is a skill for keeping work context across linked chats and devices. It describes what an agent should recall, what it should save, and how to handle corrections and unfinished tasks.
 
 [![Format: SKILL.md](https://img.shields.io/badge/format-SKILL.md-2563eb)](skills/koder-shared-memory/SKILL.md)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-16a34a)](LICENSE)
@@ -13,13 +11,11 @@ A portable skill for carrying work across Feishu, WeCom, WeChat, and your deskto
 
 ## Overview
 
-Work rarely stays in one place. A conversation starts in a private message, moves to a team group, and turns into a task on your computer. The context should travel with it.
+A task can start in a private chat and continue in a group or on a desktop. This skill gives the host a set of rules for carrying the relevant decisions, constraints, preferences, and progress along with it.
 
-KODER Shared Memory defines how an agent recalls and saves that work in one linked memory space. It covers conversations, preferences, decisions, constraints, task progress, artifact references, and verified results. Once an account, channel, or device is linked, sharing is the default. Users should not have to turn memory on again in every chat.
+Once an account, channel, or device is linked, its conversations use the linked memory space by default. Linking a group can expose associated private-chat memory to its members; the host must explain that behavior before the owner links it.
 
-The skill is built for KODER. Other agent hosts can adapt it if they provide the required identity, storage, retrieval, and synchronization capabilities.
-
-**Current scope:** this repository ships the skill and its integration contract. It does not ship a hosted memory service, chat connector, or device-sync daemon. Loading the skill defines the agent's behavior; the host still needs working services underneath it.
+The skill was written for KODER. Other hosts can adapt it if they provide identity checks, storage, retrieval, and sync. This repository supplies the instructions and integration contract, not a hosted service, chat connector, or sync daemon.
 
 ## What it covers
 
