@@ -1,5 +1,7 @@
 # KODER Shared Memory
 
+English | [简体中文](README.zh-CN.md)
+
 KODER Shared Memory is a skill for keeping work context across linked chats and devices. It describes what an agent should recall, what it should save, and how to handle corrections and unfinished tasks.
 
 [![Format: SKILL.md](https://img.shields.io/badge/format-SKILL.md-2563eb)](skills/koder-shared-memory/SKILL.md)
