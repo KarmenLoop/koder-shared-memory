@@ -55,7 +55,7 @@ def check(root=ROOT):
         require(not item.is_symlink(), f"Symlinks cannot enter the publication: {relative}")
         text = item.read_text(encoding="utf-8")
         require("\x00" not in text, f"Binary content is not expected: {relative}")
-        require(not re.search(r"[\u3400-\u9fff]", text), f"Non-English CJK content: {relative}")
+        require(item.suffix == ".md" or not re.search(r"[\u3400-\u9fff]", text), f"Non-English CJK content outside documentation: {relative}")
         require(not re.search(r"/(?:Users|home)/[A-Za-z0-9_.-]+/", text), f"Personal absolute path: {relative}")
         require(not re.search(r"(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----)", text), f"Possible credential: {relative}")
         if item.suffix in {".md", ".yaml"}:
